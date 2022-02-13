@@ -4,6 +4,7 @@ import environ
 import razorpay
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.conf import settings
 
 from .models import Order
 from .serializers import OrderSerializer
@@ -22,7 +23,7 @@ def start_payment(request):
     name = request.data['name']
 
     # setup razorpay client
-    client = razorpay.Client(auth=(env('PUBLIC_KEY'), env('SECRET_KEY')))
+    client = razorpay.Client(auth=(settings.RAZOR_KEY, settings.RAZOR_SECRET_KEY))
 
     # create razorpay order
     payment = client.order.create({"amount": int(amount) * 100, 

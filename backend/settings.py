@@ -18,6 +18,7 @@ ALLOWED_HOSTS = ["192.168.0.108", "127.0.0.1", "localhost"]
 CORS_ALLOW_ALL_ORIGINS = True
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -105,6 +106,9 @@ TIME_ZONE = 'Asia/Kolkata'
 USE_I18N = True
 
 USE_TZ = True
+
+RAZOR_KEY = 'rzp_test_2ioyu4SMKC1Nvz'
+RAZOR_SECRET_KEY = 'PeMxgIjo29GSSXIsPYCtZaiS'
 
 
 # Static files (CSS, JavaScript, Images)
